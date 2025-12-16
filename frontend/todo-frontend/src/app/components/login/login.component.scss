@@ -1,0 +1,232 @@
+// Neobrutalist Color Palette
+$neo-black: #000000;
+$neo-white: #ffffff;
+$neo-yellow: #ffde59;
+$neo-pink: #ff6b9d;
+$neo-blue: #4ecdc4;
+$neo-purple: #a855f7;
+$neo-orange: #ff9f43;
+$neo-green: #6bff6b;
+$neo-red: #ff4757;
+$neo-cream: #fffef0;
+
+$border-width: 3px;
+$shadow-offset: 5px;
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: $neo-pink;
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(0, 0, 0, 0.03) 40px,
+      rgba(0, 0, 0, 0.03) 41px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(0, 0, 0, 0.03) 40px,
+      rgba(0, 0, 0, 0.03) 41px
+    );
+}
+
+.login-card {
+  background: $neo-white;
+  border: $border-width solid $neo-black;
+  box-shadow: $shadow-offset $shadow-offset 0 0 $neo-black;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+
+  &:hover {
+    box-shadow: ($shadow-offset + 3px) ($shadow-offset + 3px) 0 0 $neo-black;
+    transform: translate(-2px, -2px);
+    transition: all 0.1s ease;
+  }
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    background: $neo-yellow;
+    border: $border-width solid $neo-black;
+    box-shadow: 4px 4px 0 0 $neo-black;
+    margin-bottom: 1.5rem;
+
+    svg {
+      color: $neo-black;
+    }
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $neo-black;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+
+  .subtitle {
+    color: $neo-black;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: $neo-black;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  input {
+    padding: 1rem 1.25rem;
+    border: $border-width solid $neo-black;
+    font-size: 1rem;
+    background: $neo-white;
+    transition: all 0.1s ease;
+    outline: none;
+
+    &::placeholder {
+      color: #888;
+    }
+
+    &:focus {
+      background: $neo-yellow;
+      box-shadow: 4px 4px 0 0 $neo-black;
+      transform: translate(-2px, -2px);
+    }
+  }
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: $neo-red;
+  border: $border-width solid $neo-black;
+  box-shadow: 4px 4px 0 0 $neo-black;
+  color: $neo-white;
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  svg {
+    flex-shrink: 0;
+    color: $neo-white;
+  }
+}
+
+.submit-btn {
+  padding: 1.25rem;
+  background: $neo-blue;
+  color: $neo-black;
+  border: $border-width solid $neo-black;
+  box-shadow: $shadow-offset $shadow-offset 0 0 $neo-black;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  margin-top: 0.5rem;
+
+  &:hover:not(:disabled) {
+    background: $neo-yellow;
+    transform: translate(-2px, -2px);
+    box-shadow: ($shadow-offset + 2px) ($shadow-offset + 2px) 0 0 $neo-black;
+  }
+
+  &:active:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 $neo-black;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.spinner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid $neo-black;
+  border-top-color: transparent;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.login-footer {
+  margin-top: 2rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: $border-width dashed $neo-black;
+
+  p {
+    color: $neo-black;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .toggle-btn {
+    background: $neo-purple;
+    border: 2px solid $neo-black;
+    box-shadow: 3px 3px 0 0 $neo-black;
+    color: $neo-white;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: all 0.1s ease;
+
+    &:hover {
+      background: $neo-yellow;
+      color: $neo-black;
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0 0 $neo-black;
+    }
+
+    &:active {
+      transform: translate(1px, 1px);
+      box-shadow: 2px 2px 0 0 $neo-black;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <div class="logo">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
+        </svg>
+      </div>
+      <h1>{{ isRegisterMode() ? "Konto erstellen" : "Willkommen zurück" }}</h1>
+      <p class="subtitle">
+        {{
+          isRegisterMode()
+            ? "Erstelle dein Todo-Konto"
+            : "Melde dich bei deinem Konto an"
+        }}
+      </p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" class="login-form">
+      @if (errorMessage()) {
+      <div class="error-message">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+        {{ errorMessage() }}
+      </div>
+      }
+
+      <div class="form-group">
+        <label for="username">Benutzername</label>
+        <input
+          type="text"
+          id="username"
+          [(ngModel)]="username"
+          name="username"
+          placeholder="Dein Benutzername"
+          autocomplete="username"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Passwort</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          placeholder="Dein Passwort"
+          autocomplete="current-password"
+        />
+      </div>
+
+      <button type="submit" class="submit-btn" [disabled]="isLoading()">
+        @if (isLoading()) {
+        <span class="spinner"></span>
+        } @else {
+        {{ isRegisterMode() ? "Registrieren" : "Anmelden" }}
+        }
+      </button>
+    </form>
+
+    <div class="login-footer">
+      <p>
+        {{ isRegisterMode() ? "Bereits ein Konto?" : "Noch kein Konto?" }}
+        <button type="button" class="toggle-btn" (click)="toggleMode()">
+          {{ isRegisterMode() ? "Anmelden" : "Registrieren" }}
+        </button>
+      </p>
+    </div>
+  </div>
+</div>

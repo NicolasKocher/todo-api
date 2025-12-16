@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# SQLite Database (optional - entfernen wenn DB mit gepusht werden soll)
+*.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.cursor/
+
+# macOS
+.DS_Store
+
+# Node.js / Angular
+node_modules/
+dist/
+.angular/
+*.log
+npm-debug.log*
+
+# Angular cache
+.angular/cache/
+
+# Test
+coverage/
+
+# Misc
+*.local
+.env.local
+.env.*.local

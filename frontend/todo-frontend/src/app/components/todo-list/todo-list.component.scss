@@ -1,0 +1,515 @@
+// Neobrutalist Color Palette
+$neo-black: #000000;
+$neo-white: #ffffff;
+$neo-yellow: #ffde59;
+$neo-pink: #ff6b9d;
+$neo-blue: #4ecdc4;
+$neo-purple: #a855f7;
+$neo-orange: #ff9f43;
+$neo-green: #6bff6b;
+$neo-red: #ff4757;
+$neo-cream: #fffef0;
+
+$border-width: 3px;
+$shadow-offset: 5px;
+
+.todo-container {
+  min-height: 100vh;
+  background: $neo-cream;
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 50px,
+      rgba(0, 0, 0, 0.02) 50px,
+      rgba(0, 0, 0, 0.02) 51px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 50px,
+      rgba(0, 0, 0, 0.02) 50px,
+      rgba(0, 0, 0, 0.02) 51px
+    );
+}
+
+.todo-header {
+  background: $neo-yellow;
+  padding: 1.5rem 2rem;
+  border-bottom: $border-width solid $neo-black;
+
+  .header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .logo {
+    width: 55px;
+    height: 55px;
+    background: $neo-white;
+    border: $border-width solid $neo-black;
+    box-shadow: 4px 4px 0 0 $neo-black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      color: $neo-black;
+    }
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: $neo-black;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+
+  .logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: $neo-white;
+    border: $border-width solid $neo-black;
+    box-shadow: 4px 4px 0 0 $neo-black;
+    color: $neo-black;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.1s ease;
+
+    &:hover {
+      background: $neo-red;
+      color: $neo-white;
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 0 $neo-black;
+
+      svg {
+        color: $neo-white;
+      }
+    }
+
+    &:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 0 $neo-black;
+    }
+  }
+}
+
+.todo-main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.add-todo-section {
+  margin-bottom: 2rem;
+}
+
+.add-todo-form {
+  display: flex;
+  gap: 1rem;
+  background: $neo-white;
+  padding: 1rem;
+  border: $border-width solid $neo-black;
+  box-shadow: $shadow-offset $shadow-offset 0 0 $neo-black;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  border: $border-width solid $neo-black;
+  font-size: 1rem;
+  background: $neo-cream;
+  transition: all 0.1s ease;
+  outline: none;
+
+  &::placeholder {
+    color: #666;
+    font-weight: 500;
+  }
+
+  &:focus {
+    background: $neo-yellow;
+    box-shadow: inset 3px 3px 0 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+  }
+}
+
+.add-btn {
+  width: 60px;
+  height: 60px;
+  border: $border-width solid $neo-black;
+  background: $neo-blue;
+  color: $neo-black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 0 0 $neo-black;
+  transition: all 0.1s ease;
+
+  &:hover:not(:disabled) {
+    background: $neo-green;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 $neo-black;
+  }
+
+  &:active:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 $neo-black;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid $neo-black;
+  border-top-color: transparent;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.todos-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.todo-section {
+  background: $neo-white;
+  border: $border-width solid $neo-black;
+  box-shadow: $shadow-offset $shadow-offset 0 0 $neo-black;
+  padding: 1.5rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: $neo-black;
+  margin: 0 0 1.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  .title-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 2px solid $neo-black;
+
+    &.open {
+      background: $neo-blue;
+    }
+
+    &.completed {
+      background: $neo-green;
+    }
+
+    svg {
+      color: $neo-black;
+    }
+  }
+
+  .count {
+    margin-left: auto;
+    background: $neo-yellow;
+    padding: 0.35rem 1rem;
+    border: 2px solid $neo-black;
+    box-shadow: 2px 2px 0 0 $neo-black;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: $neo-black;
+  }
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: $neo-cream;
+  border: $border-width solid $neo-black;
+  transition: all 0.1s ease;
+
+  &:hover {
+    background: $neo-yellow;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 0 $neo-black;
+
+    .delete-btn {
+      opacity: 1;
+    }
+  }
+
+  &.done {
+    background: darken($neo-cream, 5%);
+
+    .todo-title {
+      text-decoration: line-through;
+      text-decoration-thickness: 3px;
+      color: #666;
+    }
+  }
+}
+
+.checkbox {
+  width: 32px;
+  height: 32px;
+  border: $border-width solid $neo-black;
+  background: $neo-white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease;
+  flex-shrink: 0;
+
+  svg {
+    color: $neo-black;
+    opacity: 0.3;
+  }
+
+  &:hover:not(:disabled) {
+    background: $neo-blue;
+    box-shadow: 2px 2px 0 0 $neo-black;
+    transform: translate(-1px, -1px);
+
+    svg {
+      opacity: 1;
+    }
+  }
+
+  &.checked {
+    background: $neo-green;
+
+    svg {
+      opacity: 1;
+    }
+
+    &:hover {
+      background: $neo-red;
+
+      svg {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.todo-title {
+  flex: 1;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: $neo-black;
+}
+
+.delete-btn {
+  width: 40px;
+  height: 40px;
+  border: $border-width solid $neo-black;
+  background: $neo-white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.1s ease;
+  flex-shrink: 0;
+
+  svg {
+    color: $neo-black;
+  }
+
+  &:hover {
+    background: $neo-red;
+    box-shadow: 3px 3px 0 0 $neo-black;
+    transform: translate(-1px, -1px);
+
+    svg {
+      color: $neo-white;
+    }
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 0 $neo-black;
+  }
+}
+
+.completed-section {
+  background: darken($neo-cream, 2%);
+  border-style: dashed;
+
+  .todo-item {
+    background: $neo-white;
+    border-style: dashed;
+
+    &:hover {
+      background: lighten($neo-yellow, 10%);
+    }
+  }
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: $neo-white;
+  border: $border-width solid $neo-black;
+  box-shadow: $shadow-offset $shadow-offset 0 0 $neo-black;
+
+  .loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid $neo-black;
+    border-top-color: transparent;
+    animation: spin 0.6s linear infinite;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    color: $neo-black;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: $neo-white;
+  border: $border-width dashed $neo-black;
+  box-shadow: $shadow-offset $shadow-offset 0 0 $neo-black;
+
+  .empty-icon {
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background: $neo-purple;
+    border: $border-width solid $neo-black;
+    box-shadow: 4px 4px 0 0 $neo-black;
+
+    svg {
+      color: $neo-white;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $neo-black;
+    margin: 0 0 0.75rem 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: $neo-black;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+// Responsive
+@media (max-width: 640px) {
+  .todo-header {
+    padding: 1rem;
+
+    h1 {
+      font-size: 1.25rem;
+    }
+
+    .logo {
+      width: 45px;
+      height: 45px;
+    }
+
+    .logout-btn {
+      padding: 0.625rem 1rem;
+      font-size: 0.85rem;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  .todo-main {
+    padding: 1rem;
+  }
+
+  .add-todo-form {
+    flex-direction: column;
+    padding: 0.75rem;
+  }
+
+  .todo-input {
+    padding: 1rem;
+  }
+
+  .add-btn {
+    width: 100%;
+    height: 50px;
+  }
+
+  .todo-item {
+    padding: 0.875rem 1rem;
+  }
+
+  .delete-btn {
+    opacity: 1;
+  }
+
+  .checkbox {
+    width: 28px;
+    height: 28px;
+  }
+}

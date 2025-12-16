@@ -1,0 +1,87 @@
+/* Global Neobrutalist Styles */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+// Neobrutalist Color Palette
+$neo-black: #000000;
+$neo-white: #ffffff;
+$neo-yellow: #ffde59;
+$neo-pink: #ff6b9d;
+$neo-blue: #4ecdc4;
+$neo-purple: #a855f7;
+$neo-orange: #ff9f43;
+$neo-green: #6bff6b;
+$neo-red: #ff4757;
+$neo-cream: #fffef0;
+
+// Neobrutalist Variables
+$border-width: 3px;
+$shadow-offset: 5px;
+$border-radius: 0px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: $neo-cream;
+  color: $neo-black;
+}
+
+html,
+body,
+app-root {
+  height: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Scrollbar Styling - Neobrutalist */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: $neo-cream;
+  border: $border-width solid $neo-black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $neo-yellow;
+  border: $border-width solid $neo-black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $neo-orange;
+}
+
+/* Selection */
+::selection {
+  background: $neo-yellow;
+  color: $neo-black;
+}
