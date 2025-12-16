@@ -1,59 +1,55 @@
-# TodoFrontend
+# 🎨 Todo Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
+Angular 19 Frontend für die Todo-App mit **Neobrutalist Design**.
 
-## Development server
+## Tech Stack
 
-To start a local development server, run:
+- **Angular** 19.2 mit Standalone Components
+- **TypeScript** 5.7
+- **SCSS** für Styling
+- **RxJS** für reaktive Programmierung
+- **Angular SSR** für Server-Side Rendering
+
+## Installation
 
 ```bash
+npm install
+```
+
+## Entwicklung
+
+```bash
+npm start
+# oder
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+App läuft unter: **http://localhost:4200**
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Build
 
 ```bash
-ng generate component component-name
+npm run build
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Projektstruktur
 
-```bash
-ng generate --help
+```
+src/app/
+├── components/
+│   ├── login/           # Login & Registrierung
+│   └── todo-list/       # Todo-Verwaltung
+├── services/
+│   ├── api.service.ts   # HTTP-Kommunikation mit Backend
+│   └── auth.service.ts  # Authentication State
+└── models/              # TypeScript Interfaces
 ```
 
-## Building
+## Design
 
-To build the project run:
+Das UI verwendet den **Neobrutalist-Stil**:
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Kräftige Farben (Gelb, Pink, Türkis)
+- Dicke schwarze Borders
+- Harte Schatten ohne Blur
+- Space Grotesk Schriftart
