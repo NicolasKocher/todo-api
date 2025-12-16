@@ -34,20 +34,20 @@ API läuft unter: **http://localhost:8000**
 
 ### Auth
 
-| Methode | Endpoint    | Beschreibung             |
-| ------- | ----------- | ------------------------ |
-| POST    | `/register` | Benutzer registrieren    |
-| POST    | `/login`    | Login, gibt JWT zurück   |
+| Methode | Endpoint    | Beschreibung           |
+| ------- | ----------- | ---------------------- |
+| POST    | `/register` | Benutzer registrieren  |
+| POST    | `/login`    | Login, gibt JWT zurück |
 
 ### Todos (Auth erforderlich)
 
-| Methode | Endpoint      | Beschreibung         |
-| ------- | ------------- | -------------------- |
-| GET     | `/todos`      | Alle Todos abrufen   |
-| GET     | `/todos/{id}` | Einzelnes Todo       |
-| POST    | `/todos`      | Todo erstellen       |
-| PATCH   | `/todos/{id}` | Todo aktualisieren   |
-| DELETE  | `/todos/{id}` | Todo löschen         |
+| Methode | Endpoint      | Beschreibung       |
+| ------- | ------------- | ------------------ |
+| GET     | `/todos`      | Alle Todos abrufen |
+| GET     | `/todos/{id}` | Einzelnes Todo     |
+| POST    | `/todos`      | Todo erstellen     |
+| PATCH   | `/todos/{id}` | Todo aktualisieren |
+| DELETE  | `/todos/{id}` | Todo löschen       |
 
 ## Projektstruktur
 
